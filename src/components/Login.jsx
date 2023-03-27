@@ -5,9 +5,10 @@ import { useState } from "react";
 import Client from "../data/Client";
 import NavBar from "./NavBar";
 
-export default function Login() {
+export default function Login({route}) {
     const navigation = useNavigation();
-
+    let verification;
+    route.params ? verification = route.params.verification : verification = null;
     const [user, setUser] = useState();
     const [pass, setPass] = useState();
     const [comp, setComp] = useState();
@@ -25,6 +26,8 @@ export default function Login() {
 
 
     return (
+        <View>
+            <NavBar Verificate={verification} />
         <View
             style={{
                 paddingTop:30
@@ -48,6 +51,7 @@ export default function Login() {
             <Text>{comp}</Text>
             <Button title="¿No tienes cuenta? Cree una" onPress={() => navigation.navigate("createAccount")}></Button>
             <Button title="Login" onPress={login} > Texto</Button>
+        </View>
         </View>
     )
 }
