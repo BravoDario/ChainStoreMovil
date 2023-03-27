@@ -4,12 +4,25 @@ import Main from "./Main";
 import Login from "./Login";
 import ProductDetails from "./ProductDetails";
 import Profile from "./Profile";
+import WishList from "./WishList";
+import PaymentMethod from "./PaymentMethod";
+import AddLittleCar from "./AddLittleCar";
+import History from "./History";
+
 
 const Navigator = () => {
     const Stack = createNativeStackNavigator();
     return (
         <Stack.Navigator 
         screenOptions={{ headerShown: false,}}>
+            <Stack.Screen
+                name="adLittleCar"
+                component={AddLittleCar}
+            />
+            <Stack.Screen
+                name="history"
+                component={History}
+            />
             <Stack.Screen
                 name="main"
                 component={Main}
@@ -26,6 +39,15 @@ const Navigator = () => {
                 name="profile"
                 component={Profile}
             />
+            <Stack.Screen 
+                name="wish"
+                component={WishList}
+            />
+            <Stack.Screen 
+                name="payMethod"
+                component={PaymentMethod}
+            />
+
         </Stack.Navigator>
     )
 }

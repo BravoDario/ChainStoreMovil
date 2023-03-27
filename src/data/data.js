@@ -8,10 +8,9 @@ const products = [
         condition: "Nuevo",
         platform: "PlayStation 5",
         garanty: "Un año",
-        description:"Un juego es la actividad que realiza uno o más jugadores, empleando su imaginación o herramientas para crear"+
-                    "una situación con un número determinado de reglas, donde puede o no haber ganadores y perdedores con el fin "+
-                    "de proporcionar entretenimiento o diversión, en muchas ocasiones, incluso como herramienta educativa, pues e"+
-                    "n la mayoría de los casos funcionan estimulando habilidades prácticas y psicológicas.",
+        description:"Resident Evil 4 es un remake del Resident Evil 4 original del 2005. Survival Horror de última generación "+ 
+                    "reimaginado para el año 2023. en la experiencia de Survival Horror definitiva en la cual se cruzan la vida "+
+                     "y la muerte, el terror y la catarsis.",
         publiquer: "ChainStore",
         year: "DD/MM/YYYY",
     }, {
@@ -22,7 +21,7 @@ const products = [
         condition: "Nuevo",
         platform: "Xbox",
         garanty: "Tres años",
-        description:"Un juego es la actividad que realiza uno o más jugadores, empleando su imaginación o herramientas para crear"+
+        description:"Un juego es la actividad que realiza uno o más jugadores, empleando su imaginación o herramientas para crear "+
                     "una situación con un número determinado de reglas, donde puede o no haber ganadores y perdedores con el fin "+
                     "de proporcionar entretenimiento o diversión, en muchas ocasiones, incluso como herramienta educativa, pues e"+
                     "n la mayoría de los casos funcionan estimulando habilidades prácticas y psicológicas.",

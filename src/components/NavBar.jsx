@@ -17,7 +17,7 @@ const NavBar = ({ Verificate }) => {
         <View style={{
             flexDirection: 'row',
             height: 40,
-            marginTop: 30,
+            marginTop: 10,
             backgroundColor: "#EB2300"
         }}>
             

@@ -14,10 +14,10 @@ const Product = () => {
         }}>
             <View style={{ backgroundColor: "gray",
             padding: 10,
-            height: 200,
+            height: 250,
             width: 130,}}>
-                <Image source={{ uri: 'https://http2.mlstatic.com/D_NQ_NP_644830-MLA50222950634_062022-O.webp' }}
-                    style={{backgroundColor: "green", width: 100, height: 100}} />
+                <Image source={{ uri: 'https://cdn.gameplanet.com/wp-content/uploads/2023/03/23195011/013388934027-resident-evil-4-remake-ps5-2.jpg' }}
+                    style={{backgroundColor: "green", width: 100, height: 150}} />
                 <Text>{videoGame.product.name}</Text>
                 <Text>$ {videoGame.product.pricePage}</Text>
                 <Button title="Ver" onPress={() => navigation.navigate("productDetails", {verification:true})} />
@@ -27,3 +27,4 @@ const Product = () => {
 }
 
 export default Product;
+
