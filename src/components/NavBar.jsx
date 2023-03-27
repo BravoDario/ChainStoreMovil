@@ -16,13 +16,12 @@ const NavBar = ({ Verificate }) => {
     return (
         <View style={{
             flexDirection: 'row',
-            height: 40,
+            height: "7%",
             marginTop: 30,
             backgroundColor: "#EB2300"
-        }}>
-            
+        }}> 
             <View style={{ margin: 3, flex: 0.3 }} >
-                <Button title="Chain Store" color="#EB2300"/>
+                <Button title="Chain Store" color="#EB2300" onPress={() => navigation.navigate("main")}/>
             </View>
             <View style={{ backgroundColor: "white", margin: 5, flex: 0.7 }} >
                 <TextInput placeholder="Buscar" />

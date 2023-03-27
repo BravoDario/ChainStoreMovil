@@ -2,42 +2,53 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react"
 import { Button } from "react-native";
 import { View, Text, Image, ScrollView } from "react-native";
-import videogame from "../data/data"
 import NavBar from "./NavBar";
 
 const ProductDetails = ({ route }) => {
     const navigation = useNavigation();
-    let verification;
-    route.params ? verification = route.params.verification : verification = null;
+    let videogame;
+    route.params ? videogame = route.params.videogame : verification = null;
 
     return (
         <View>
-            <NavBar Verificate={verification} />
-            <ScrollView>
-                <Text>
-                    Producto a detalle
-                </Text>
-                <Image source={{ uri: 'https://http2.mlstatic.com/D_NQ_NP_644830-MLA50222950634_062022-O.webp' }}
-                    style={{ width: 300, height: 300 }} />
-                <Text>{videogame.product.name}</Text>
-                <Text>$ {videogame.product.pricePage}</Text>
-                <Text>{videogame.product.condition}</Text>
-                <Text>{videogame.product.platform}</Text>
-                <Text>{videogame.product.garanty}</Text>
-                <Text>{videogame.product.description}</Text>
-                <Text>{videogame.product.publiquer}</Text>
-                <Text>{videogame.product.year}</Text>
-                <Text>{videogame.clasification}</Text>
-                <Text>{videogame.gender}</Text>
-                <Button title="Agregar al carrito de compras"></Button>
-                <Button title="Agregar a favoritos"></Button>
-                <Button title="Comprar ahora"></Button>
-                <Button title="volver" onPress={() => navigation.navigate("main")} />
-                {/*
-                    desarrollado
-                    trailer
-                 */
-                }
+            <NavBar Verificate={true} />
+            {/*desarrollado trailer*/}
+            <ScrollView style={{
+                margin: 15,
+                marginBottom:90,
+                backgroundColor: "white"
+            }}>
+                <View style={{
+                    flexDirection: 'row'
+                }}>
+                    <Image source={{ uri: videogame.fotos[0].foto }}
+                        style={{ width: 170, height: 200 }} />
+                    <View style={{ margin: 5, width: 200, flexWrap: 'wrap' }} >
+                        <Text style={{ fontWeight: "bold", fontSize: 27 }}>{videogame.product.name}</Text>
+                        <Text style={{ fontSize: 20 }}>$ {videogame.product.pricePage + '\n' +
+                            videogame.product.platform + '\n' +
+                            videogame.product.year + '\n' +
+                            videogame.clasification + '\n' +
+                            videogame.product.publiquer + '\n' +
+                            videogame.gender}</Text>
+                    </View>
+                </View>
+                <ScrollView horizontal={true} style={{ flexDirection: 'row' }}>
+                    {videogame.fotos.map((foto, index) => { return <Image key={index} source={{ uri: foto.foto }} style={{ margin: 5, width: 100, height: 120 }} /> })}
+                </ScrollView>
+                <View>
+                    <Text style={{ fontSize: 20 }}>{videogame.product.description}</Text>
+                    <Text>{videogame.product.condition}</Text>
+                    <Text>{videogame.product.garanty}</Text>
+                    <View style={{
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                    }}>
+                        <Button title="Agregar al carrito"></Button>
+                        <Button title="Comprar ahora"></Button>
+                    </View>
+                    <Button title="volver" onPress={() => navigation.navigate("main")} />
+                </View>
             </ScrollView>
         </View>
     )

@@ -1,26 +1,23 @@
 import React from "react";
 import { View, Text, Button, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Data from "../data/data"
 
-const Product = () => {
-
+const Product = ({videoGame}) => {
     const navigation = useNavigation();
-    const videoGame = Data;
-
     return (
         <View style={{
             padding: 10
         }}>
-            <View style={{ backgroundColor: "gray",
+            <View style={{ 
+            backgroundColor: "#FFF",
             padding: 10,
-            height: 200,
+            height: 220,
             width: 130,}}>
-                <Image source={{ uri: 'https://http2.mlstatic.com/D_NQ_NP_644830-MLA50222950634_062022-O.webp' }}
-                    style={{backgroundColor: "green", width: 100, height: 100}} />
+                <Image source={{ uri: videoGame.fotos[0].foto }}
+                    style={{ width: 100, height: 120}} />
                 <Text>{videoGame.product.name}</Text>
                 <Text>$ {videoGame.product.pricePage}</Text>
-                <Button title="Ver" onPress={() => navigation.navigate("productDetails", {verification:true})} />
+                <Button color={"#512828"} title="Ver" onPress={() => navigation.navigate("productDetails", {videogame:videoGame})} />
             </View>
         </View>
     )

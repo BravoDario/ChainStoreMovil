@@ -1,26 +1,40 @@
 import React from "react";
-import { Alert, Button, Text, View } from "react-native";
+import { Alert, Button, ScrollView, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import NavBar from "./NavBar";
 import Product from "./Product";
-import client from "../data/Client";
+import videogames from "../data/data";
+import useVideojuegos from "../data/useVideojuegos";
 
 export default function Main({ route }) {
     const navigation = useNavigation();
-    console.log(route.params);
     let verification;
-    route.params ? verification = route.params.verification : verification=null;
+    route.params ? verification = route.params.verification : verification = null;
     
+    let videojuegos = useVideojuegos();
+
+    console.log(videojuegos);
 
     return (
-        <View>
-            <NavBar Verificate={verification}/>
+        <View style={{
+            backgroundColor: "#5C5C55", //Gris oscuro
+            height: "100%"
+        }}>
+            <NavBar Verificate={verification} />
             <View style={{
-                flexDirection: 'row',
-                padding: 10
+                padding: 15,
+                margin: 15, 
+                backgroundColor: "#D9D9D9",
+                marginBottom: "100%"
             }}>
-                <Product />
-                <Product />
+                <Text style={{ position: "relative", fontWeight: "bold", fontSize: 24 }}>Videojuegos</Text>
+                <ScrollView horizontal={true} style={{
+                    flexDirection: 'row'
+                }}>
+                    {videogames.map((videogame, index) => {
+                        return <Product key={index} videoGame={videogame} />;
+                    })}
+                </ScrollView>
             </View>
         </View>
     )

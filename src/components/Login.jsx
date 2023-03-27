@@ -45,8 +45,9 @@ export default function Login() {
                 onChange={(value) => setPass(value.nativeEvent.text)}
                 value={pass}
             />
-            <Button title="Login" onPress={login} > Texto</Button>
             <Text>{comp}</Text>
+            <Button title="¿No tienes cuenta? Cree una" onPress={() => navigation.navigate("createAccount")}></Button>
+            <Button title="Login" onPress={login} > Texto</Button>
         </View>
     )
 }
